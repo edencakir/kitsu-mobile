@@ -102,7 +102,7 @@ class QuickUpdate extends Component {
   componentDidMount() {
     this.props.navigation.setParams({
       tabListener: async ({ previousScene, scene, jumpToIndex }) => {
-        // capture tap events and detect double press to fetch notifications
+        // capture tap events and detect double press to scroll up
         const now = new Date().getTime();
         const doublePressed = this.lastTap && now - this.lastTap < DOUBLE_PRESS_DELAY;
         if (previousScene.key !== 'QuickUpdate' || doublePressed) {
