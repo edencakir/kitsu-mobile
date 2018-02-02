@@ -108,7 +108,7 @@ class QuickUpdate extends Component {
         if (previousScene.key !== 'QuickUpdate' || doublePressed) {
           this.lastTap = null;
           jumpToIndex(scene.index);
-          this.scrollView.scrollTo({ x: 0, y: 0, animated: true });
+          this.resetScrollPosition();
         } else {
           this.lastTap = now;
         }
@@ -430,6 +430,10 @@ class QuickUpdate extends Component {
       // this.props.onEndEditing();
     }
   };
+
+  resetScrollPosition = () => {
+    this.scrollView.scrollTo({ x: 0, y: 0, animated: true });
+  }
 
   renderPostItem = ({ item }) => (
     <Post
